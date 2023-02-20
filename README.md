@@ -59,6 +59,6 @@ flowchart TD
 
 ![Mobile Mockup](url)  ![](url)
 
-* [Deployed Website](https://myevents-s.netlify.app/) 
+* [Deployed Website](https://supplysmart-ar.netlify.app/) 
 
 * [Trello Board](https://trello.com/invite/b/bROqOyUz/ATTI1381d204f7d3dbdbeac55c4c344b7d7704D25EDA/inventory-app) 
