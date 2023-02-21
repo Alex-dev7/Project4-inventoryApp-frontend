@@ -49,15 +49,15 @@ flowchart TD
 
 ### Desktop Mockup
 
-![Desktop Mockup](url)
-![](url)
+![Desktop Mockup](https://i.imgur.com/tNJ2XIX.png)
+![](https://i.imgur.com/laVVGmM.png)
 ![](url)
 
 ### Mobile Mockup
 
 
 
-![Mobile Mockup](url)  ![](url)
+![Mobile Mockup](https://i.imgur.com/heE20Hj.png)  ![](https://i.imgur.com/qwhZn4l.png)
 
 * [Deployed Website](https://supplysmart-ar.netlify.app/) 
 
