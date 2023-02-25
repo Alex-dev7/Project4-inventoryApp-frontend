@@ -1,29 +1,30 @@
 import { redirect } from "react-router-dom"
 
-const URL = "https://inventory-api-yh0c.onrender.com"
+const URL = "https://inventory-api-92cp.onrender.com"
+
 
 export const createAction = async ({request}) => {
+
+ 
     const formData = await request.formData()
 
-    const newItem = {
-        name: formData.get("name"),
-        quantity: formData.get("quantity"),
-        department: formData.get("department"),
-        image: formData.get("image"),
-        details: formData.get("details"),
-        location: formData.get("location"),
-    }
+    formData.append("name", formData.get("name"))
+    formData.append("quantity", formData.get("quantity"))
+    formData.append("department", formData.get("department"))
+    formData.append("image", formData.get("image"))
+    formData.append("details", formData.get("details"))
+    formData.append("location", formData.get("location"))
+  
+    // console.log(formData.get("name"))
 
-    // send request to the backend
     await fetch(URL + "/inventory/", {
-        method: "post",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(newItem)
+        method: "POST",
+        body: formData
     })
     return redirect("/")
 }
+
+
 
 export const updateAction = async ({request, params}) => {
     const formData = await request.formData()

@@ -1,4 +1,4 @@
-const URL = "https://inventory-api-yh0c.onrender.com"
+const URL = "https://inventory-api-92cp.onrender.com"
 
 export const indexLoader = async () => {
     const response = await fetch(URL + "/inventory/")

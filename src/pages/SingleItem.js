@@ -11,6 +11,7 @@ const ShowItem = () => {
             <p>{item.details}</p>
             <p>{item.quantity}</p>
             <span>{item.location}</span>
+            <img src={item.image} alt={item.name} />
             <Link to={"/"} >
                 <button>back</button>
             </Link>
