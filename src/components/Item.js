@@ -5,10 +5,13 @@ const Item = ({item}) => {
 
     return ( <>
         <div className='item-container'>
+            <p>{item.id}</p>
             <Link to={`/item/${item.id}`}>
-                <h1>{item.name}</h1>
+                <p>{item.name}</p>
             </Link>
-            <h2>{item.quantity}</h2>
+            <p>{item.department}</p>
+            <p>{item.location}</p>
+            <p>{item.quantity}</p>
         </div>
     
     </>)

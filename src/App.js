@@ -1,10 +1,16 @@
-import './App.css';
+import './App.scss'
 import { Outlet } from 'react-router-dom';
-
+import Sidebar from './components/Sidebar';
+import Preview from './components/Preview';
 function App() {
   return (
     <div className="App">
-        <Outlet />
+        <Sidebar/>
+        <div className='content-wrapper'>
+          <Preview />
+          <Outlet />
+        </div>
+
     </div>
   );
 }
