@@ -32,12 +32,14 @@ function Sidebar(params){
                     <Link>
                         <p>Tools</p>
                     </Link>
-                </div>
 
-                <Link id="about" to="/about">
-                    <p>About</p>
-                </Link>
+                </div>
+                    <Link id="about" to="/about">
+                        <p>About</p>
+                    </Link>
+
             </section>
+
         </>
     )
 }

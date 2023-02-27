@@ -6,7 +6,14 @@ const ShowItem = () => {
 
     const [toggle, setToggle] = useState(false)
 
-    const handleToggle = () => setToggle(!toggle)
+    const handleToggleAsync = () => {
+        
+        setTimeout(() => {
+            setToggle(!toggle)
+        }, 100)
+        
+    }
+
 
     return (<>
         <div className="show-content-container">
@@ -21,14 +28,14 @@ const ShowItem = () => {
                     <Link to={"/"} >
                         <button>back</button>
                     </Link>
-                    <button onClick={handleToggle}>{toggle ? "x" : <span>&#9881;</span>}</button>  
+                    <button onClick={() => setToggle(!toggle)}>{toggle ? "x" : <span>&#9881;</span>}</button>  
                 </div>
                             
             </div>
             <div className="b-side">
               
                 {item.image ? <img src={item.image} alt={item.name} /> :  <img src={placeholderImage} alt="placeholder icon" />}
-                <Form action={`/delete/${item.id}`} method="post">
+                <Form action={`/delete/${item.id}`} method="post" >
                     <button id="delete">delete item</button>
                 </Form>
             </div>
@@ -57,7 +64,7 @@ const ShowItem = () => {
                         <option value="G-1">F-1</option>
                     </select>
                 
-                <button onClick={handleToggle}>update</button>
+                <button onClick={handleToggleAsync}>update</button>
             </Form> : null}
 
         </div>
