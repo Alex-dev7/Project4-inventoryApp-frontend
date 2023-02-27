@@ -11,7 +11,7 @@ function Sidebar(params){
                 
                 <div className="department-links">
                     <p className='departments'>Departments</p>
-                    <Link>
+                    <Link to='/'>
                         <p>All</p>
                     </Link>
                     <Link>
@@ -33,6 +33,10 @@ function Sidebar(params){
                         <p>Tools</p>
                     </Link>
                 </div>
+
+                <Link id="about" to="/about">
+                    <p>About</p>
+                </Link>
             </section>
         </>
     )

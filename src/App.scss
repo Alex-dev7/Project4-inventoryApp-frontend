@@ -76,15 +76,20 @@
                     flex-wrap: wrap;
                     justify-content: flex-start;
                     gap: .5rem;
+
+                    select {
+                        width: fit-content;
+                        
+                    }
                 }
-                input {
+                input, select, textarea {
                     height: 30px;
                     margin: 5px 10px;
                     padding: 5px 10px;
                 }
                 textarea {
                     resize: none;
-                    height: 3rem;
+                    height: 5rem;
                     margin-top: 5px;
                     padding: 5px 10px;
                   }
@@ -172,14 +177,14 @@
     box-shadow: 0 0 15px #515455;
     display: grid;
     grid-template-columns: 1fr 1fr;
-
+    position: relative;
     img {
         max-width: 350px;
         max-height: 400px;
         object-fit: cover;
-        
+
     }
-    div {
+    div{
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -196,18 +201,62 @@
             color: rgba(255, 255, 255, 0.688);
             padding: 2px 10px;
         }
-        button {
-            @include button-style(); 
- 
+        .buttons-container {
+            width: 100%;
+            padding: 0;
+            margin-top: 4rem;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            button {
+
+                @include button-style(); 
+                span {
+                    background-color: transparent;
+                }
          }
+        }
+
     }
     .b-side {
         align-items: center;
+        justify-content: space-between;
        
 
     }
 
     form {
-        display: none;
+        #delete {
+            @include button-style();
+            color: rgba(255, 0, 0, 0.899);
+            border:2px solid red;
+            margin-bottom: 1rem;
+        }
+        #delete:hover {
+            background-color: red;
+            color: white;
+            box-shadow: 0 0 5px #ab312b;
+        }
+    }
+
+    .update-form {
+        position: absolute;
+        width: 50%;
+        min-height: 80%;
+        background-color:#262830;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        font-size: 1.2rem;
+        padding: 5rem;
+        input, textarea {
+            padding: 5px 10px;
+            width: 100%;
+        }
+        button {
+            @include button-style();
+        }
     }
 }

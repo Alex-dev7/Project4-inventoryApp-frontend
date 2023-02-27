@@ -8,7 +8,7 @@
     .text-logo {
         color: #505969;
         text-align: center;
-        margin: 2rem auto;;
+        margin: 2rem auto 4rem auto;
         font-size:2.2rem;
     }
     .department-links {
@@ -30,6 +30,17 @@
             background-color: #1997C6;
             border-radius: 5px;
         }
+    }
+    #about {
+        letter-spacing: 1px;
+        color: white;
+        padding: 110px 15px;
+        text-decoration: none;
+        font-weight: 300;            
+       :hover{
+            background-color: #19c67b;
+            border-radius: 5px;
+       }
     }
 
 }
