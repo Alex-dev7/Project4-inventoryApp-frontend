@@ -21,7 +21,7 @@ export const createAction = async ({request}) => {
         method: "POST",
         body: formData
     })
-    return redirect("/")
+    return redirect("/dashboard/")
 }
 
 
@@ -82,6 +82,6 @@ export const deleteAction = async ({params}) => {
         method: "delete",
     })
 
-    return redirect("/")
+    return redirect("/dashboard/")
 }
 

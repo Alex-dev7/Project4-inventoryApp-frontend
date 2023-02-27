@@ -1,22 +1,26 @@
 import { Link, useLoaderData, Form } from "react-router-dom"  
-
+import placeholderImage from'./tool-kit.png'
 const ShowItem = () => {
     const item = useLoaderData()
 
     return (<>
-        <div>
-            <span>{item.id}</span>
-            <h3>{item.name}</h3>
-            <h3>{item.department}</h3>
-            <p>{item.details}</p>
-            <p>{item.quantity}</p>
-            <span>{item.location}</span>
-            <img src={item.image} alt={item.name} />
-            <Link to={"/"} >
-                <button>back</button>
-            </Link>
-        </div>
-        <div>
+        <div className="show-content-container">
+            <div className="a-side">
+               <span>ID:<p> {item.id}</p></span>
+                <span>Item: <h3>{item.name}</h3></span>
+                <span>Department: <h3>{item.department}</h3></span>
+                <span>Details:<p>{item.details}</p></span> 
+                <span>Qty:<p>{item.quantity}</p></span>
+                <span>Location:<h3>{item.location}</h3></span>
+                <Link to={"/"} >
+                    <button>back</button>
+                </Link>                              
+            </div>
+            <div className="b-side">
+              
+                {item.image ? <img src={item.image} alt={item.name} /> :  <img src={placeholderImage} alt="placeholder icon" />}
+            </div>
+        
             <Form  action={`/update/${item.id}`} method="put" encType="multipart/form-data">
                 <input type="text" name="name" placeholder="item name"  defaultValue={item.name}/>
                 <input type="number" name="quantity" placeholder="qty" defaultValue={item.quantity}/>

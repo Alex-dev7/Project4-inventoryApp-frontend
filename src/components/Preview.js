@@ -13,9 +13,9 @@ function Preview(props){
     }
 
     return (<section className="preview">
-        
+        {/* <CreateForm /> */}
         { toggle ?  <CreateForm /> : <p>Preview</p> }
-        <button id="form-toggle-btn" onClick={handleClick}>add item</button>
+        <button id="form-toggle-btn" onClick={handleClick}>{toggle ? "close" : "add item"}</button>
     </section>)
 }
 
