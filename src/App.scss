@@ -44,10 +44,40 @@
     justify-content: space-between;
     .preview {
         min-height: 20vh;
+        max-height: 22vh;
         width: 100%;
         background-color: #262830;
         border-radius: 20px;
         box-shadow: 0 0 15px #515455;
+
+        .qty-container {
+            max-height: 100%;
+            width: 100%;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-content: center;
+            overflow-y: scroll;
+            padding: 3rem auto 1rem auto;
+
+            div {
+                
+            //    padding: 1rem;
+                transform: translateY(40px);
+                display: flex;
+                gap: 1rem;
+                align-items: center;
+                justify-content: center;
+
+                img {
+                    width: 50px;
+                    border-radius: 50% ;
+
+                }
+            }
+        }
+
  
         .create-form-container {
             display: flex;
@@ -175,6 +205,7 @@
 }
 }
 
+
 .show-content-container {
     height: 70%; 
     width:100%;
@@ -248,7 +279,7 @@
     .update-form {
         position: absolute;
         width: 50%;
-        min-height: 80%;
+        min-height: 75%;
         background-color:#262830;
         display: flex;
         flex-direction: column;
@@ -266,3 +297,15 @@
         }
     }
 }
+
+.qty-container::-webkit-scrollbar {
+    width: 4px;
+    height: 0px;
+  }
+  .qty-container::-webkit-scrollbar-track {
+    background: #f1f1f100;
+  }
+  .qty-container::-webkit-scrollbar-thumb {
+    background: #888;
+  }
+ 

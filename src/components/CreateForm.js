@@ -19,7 +19,7 @@ function CreateForm(params) {
                         <option value="Hardware">Hardware</option>
                         <option value="Tools">Tools</option>
                 </select>  
-                <input type="file" name="image" /> 
+                <input type="file" name="image" required/> 
                 
                 </div>
                 <div>
