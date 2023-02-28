@@ -21,7 +21,7 @@ export const createAction = async ({request}) => {
         method: "POST",
         body: formData
     })
-    return redirect("/dashboard/")
+    return redirect("/")
 }
 
 

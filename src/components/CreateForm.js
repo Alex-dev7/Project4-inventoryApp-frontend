@@ -10,8 +10,8 @@ function CreateForm(params) {
                 <div>
                 <input type="text" name="name" placeholder="item name" required/>
                 <input type="number" name="quantity" placeholder="qty" required/>
-                <select id="location" name="location" required >
-                         <option >Choose a location</option>
+                <select id="department" name="department" required >
+                         <option >Choose a deprtment</option>
                         <option value="Electric">Electrical</option>
                         <option value="Plumbing">Plumbing</option>
                         <option value="Networking">Networking</option>
@@ -24,7 +24,7 @@ function CreateForm(params) {
                 </div>
                 <div>
                     <textarea  name="details" rows="2" cols="33" placeholder="details" required />
-                    <select id="department" name="department" required >
+                    <select id="location" name="location" required >
                     <option >Choose a location</option>
                         <option value="A-1">A-1</option>
                         <option value="B-1">B-1</option>
