@@ -9,7 +9,7 @@ function Preview({items}){
 
     function handleClick(e){
        setToggle(!toggle) 
-       return 1
+      
     }
 
     return (<>

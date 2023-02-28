@@ -35,7 +35,6 @@ export const updateAction = async ({request, params}) => {
     formData.append("name", formData.get("name"))
     formData.append("quantity", formData.get("quantity"))
     formData.append("department", formData.get("department"))
-    // formData.append("image", formData.get("image")) 
     formData.append("details", formData.get("details"))
     formData.append("location", formData.get("location"))
   

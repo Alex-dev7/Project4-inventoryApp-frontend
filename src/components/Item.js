@@ -14,7 +14,7 @@ const Item = ({item}) => {
                     </Link> 
                 </td>
      
-                <td>{item.department}</td> 
+                <td id="department">{item.department}</td> 
                 <td>{item.location}</td>     
                 <td>{item.quantity}</td>      
             </tr>
