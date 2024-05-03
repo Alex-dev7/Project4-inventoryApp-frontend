@@ -10,25 +10,21 @@ function Sidebar({getWordFunc}){
 
     function handleClick(e) {
         getWordFunc(e.target.innerText)
-        console.log(e.target.innerText)
-
-        
+        setToggle(false)
     }
 
     function handleToggle() {
-            if(toggle ){
-                myRef.current.style = "transform: translateY(0%)"
-            } else {
-                myRef.current.style = "transform: translateY(-110%)"
-            }
-            setToggle(!toggle)
-
+        setToggle(!toggle)
     }
 
 
+    const sidebarStyle = {
+        transform: toggle ? "translateY(0%)" : "translateY(-110%)"
+    }
+
     return (
         <>
-            <section ref={myRef} className="sidebar">
+            <section style={sidebarStyle}  className="sidebar">
                 <Link className="logo-container" to="/">
                     <p className='text-logo'>SupplySmart</p>
                 </Link>
@@ -40,33 +36,33 @@ function Sidebar({getWordFunc}){
                     onClick={handleClick} >
                         <p >All</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p >Electric</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p>Plumbing</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p>Networking</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p>Electronics</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p>Hardware</p>
                     </Link>
-                    <Link onClick={handleClick}>
+                    <Link to="/" onClick={handleClick}>
                         <p>Tools</p>
                     </Link>
 
                 </div>
-                    <Link id="about" to="/about" >
+                    <Link id="about" to="/about" onClick={() => setToggle(false)}>
                         <p>About</p>
                     </Link>
 
             </section>
                 <div className="mobile-header">
-                      <button onClick={handleToggle}>{toggle ? <span>&#9868;</span> : "x"}</button>
+                      <button onClick={handleToggle}>{toggle ? "x" : <span>&#9868;</span> }</button>
                     <h1>SupplySmart</h1>
                 </div>
        
@@ -75,3 +71,5 @@ function Sidebar({getWordFunc}){
 }
 
 export default Sidebar
+
+
