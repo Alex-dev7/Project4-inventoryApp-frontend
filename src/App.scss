@@ -20,6 +20,11 @@ body {
     border-radius: 5px;
     font-size: 1rem;
     transition: .1s ease-in;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // align-content: center;
+    // justify-items: center;
 
     &:hover {
         box-shadow: 0 0 5px #2bab52;
@@ -409,7 +414,8 @@ body {
 
             h1 {
                 color: #7b8184;
-                font-size: 3rem;
+                margin-top: 2rem;
+                font-size: 2.5rem;
             }
 
             button {
@@ -418,9 +424,11 @@ body {
                 left: 3%;
                 z-index: 11111;
                 @include button-style();
-                font-size: 2rem;
-                padding: 0;
-                width: 4rem;
+                font-size: 1.7rem;
+                padding-bottom: 10px;
+
+                width: 40px;
+                height: 35px;
                 background-color: transparent;
 
             }
@@ -476,13 +484,17 @@ body {
     }
 
     .show-content-container {
-
+        width: 100%;
         display: flex;
         flex-direction: column;
-        align-items: center;
-        justify-content: flex-start;
+        top: 15%;
+        transform: translateY(0);
+        // align-items: center;
+        // justify-content: center;
+        
+        // justify-content: flex-start;
         position: relative;
-        min-height: 100vh;
+        // min-height: 100vh;
 
         img {
             max-width: 250px;
