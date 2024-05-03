@@ -1,12 +1,24 @@
 import { Form } from "react-router-dom"
 import './dashboard.scss'
+import './form.scss'
+
 
 function CreateForm(params) {
+
+
+    function handleSubmitReload() {
+        setTimeout(() => {
+            window.location.reload()
+        
+        }, 1200)
+        
+    }
+
 
     return (
         <div className="create-form-container">
             <h2>Add new item</h2>
-            <Form action="/create" method="post"   encType="multipart/form-data">
+            <Form action="/create" method="post"  encType="multipart/form-data" onSubmit={handleSubmitReload}>
                 <div>
                 <input type="text" name="name" placeholder="item name" required/>
                 <input type="number" name="quantity" placeholder="qty" required/>
@@ -35,7 +47,7 @@ function CreateForm(params) {
                     </select>
                                        
                 </div>
-                    <button>create</button> 
+                <button  type="submit" >create</button> 
             </Form>
         </div>
 

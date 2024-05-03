@@ -3,11 +3,12 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-   
-    font-family:system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
-body{
-    background-color:#4c5051;
+
+body {
+    background-color: #4c5051;
 }
 
 @mixin button-style {
@@ -19,14 +20,14 @@ body{
     border-radius: 5px;
     font-size: 1rem;
     transition: .1s ease-in;
-  
+
     &:hover {
-      box-shadow: 0 0 5px #2bab52;
-      color: white;
-      background-color: #0f8b06;
-      cursor: pointer;
+        box-shadow: 0 0 5px #2bab52;
+        color: white;
+        background-color: #0f8b06;
+        cursor: pointer;
     }
-  }
+}
 
 .App {
     position: relative;
@@ -45,15 +46,25 @@ body{
     display: grid;
     grid-template-rows: 22vh 70vh;
     gap: 1rem;
+
     .preview {
         height: 100%;
         width: 100%;
-        background-color: #262830;
-        border-radius: 20px;
+        background-color: #1b1e2a;
+        // border-radius: 20px;
         box-shadow: 0 0 15px #515455;
+        overflow-y: scroll;
+        &::-webkit-scrollbar {
+            width: 1px;
+        }
+    
+        &::-webkit-scrollbar-track {
+            background: #00000000;
+        }
+
 
         .qty-container {
-            
+
             min-height: 90%;
             width: 100%;
             color: white;
@@ -70,6 +81,7 @@ body{
                 color: inherit;
             }
 
+
             div {
                 display: flex;
                 align-items: center;
@@ -81,21 +93,22 @@ body{
                 background-color: #40404049;
                 border-radius: 20px;
                 margin-left: 10px;
-                
+
                 img {
                     width: 40px;
                     height: 40px;
-                    border-radius: 50% ;
+                    object-fit: cover;
+                    border-radius: 50%;
                     margin-left: 5px;
 
-                }    
+                }
 
-                .text-container  {
+                .text-container {
                     span {
                         font-size: 14px;
                     }
 
-                      
+
                 }
 
                 &:hover {
@@ -106,64 +119,22 @@ body{
             }
         }
 
- 
-        .create-form-container {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            width: 100%;
-            min-height: 100%;
-            // outline: 1px solid rgb(255, 255, 255);
-            background-color: #284853;
-            border-radius: 20px;
-            h2{
-                margin-top: -2rem;
-                color: rgb(122, 185, 239);
-            }
-            form{
-                display: grid;
-                grid-template-columns: 1fr 1fr;
-                position: relative;
-                padding: 2rem;
-                width: 100%;
-                text-align: center;
-                div{
-                    display: flex;
-                    flex-direction: column;
-                    flex-wrap: wrap;
-                    justify-content: flex-start;
-                    gap: .5rem;
+    }
 
-                    select {
-                        width: fit-content;
-                        
-                    }
-                }
-                input, select, textarea {
-                    height: 30px;
-                    margin: 5px 10px;
-                    padding: 5px 10px;
-                }
-                textarea {
-                    resize: none;
-                    height: 5rem;
-                    margin-top: 5px;
-                    padding: 5px 10px;
-                  }
-                button {
-                    // position: absolute;
-                    @include button-style();
-                    position: absolute;
-                    left: 0;
-                    right: 0;
-                    bottom: 7%;
-                    margin: 0 auto;
-                }
-            }
-        }
+    .content-container {
+        position: relative;
+        height: 100%;
+        width: 100%;
+        background-color: #1b1e2a;
+        box-shadow: 0 0 15px #565a5b;
+        padding: 50px 2rem;
+
+
         #form-toggle-btn {
             position: absolute;
-            top: 27%;
+            top: 4%;
+            right: 5%;
+
             padding: 5px 10px;
             background: transparent;
             border: 2px solid #1997C6;
@@ -171,96 +142,115 @@ body{
             border-radius: 5px;
             font-size: 1rem;
             transition: .1s ease-in;
-        } 
+        }
+
         #form-toggle-btn:hover {
             box-shadow: 0 0 5px #7b8184;
             color: white;
             background-color: #1997C6;
             cursor: pointer;
         }
-    }
-    .content-container {
-        height: 100%; 
-        width:100%;
-        background-color: #1b1e2a;
-        // border-radius: 20px;  
-        box-shadow: 0 0 15px #565a5b;
-        padding: 50px 2rem;
 
         h3 {
             color: #7b8184;
             font-size: 1.5rem;
             margin: 1rem 0;
         }
-        .item-container {
-            // outline: 1px solid gold;
-            width: 95%;
-            margin: 1rem auto;
-            line-height: 2rem;
-            .table-name {
-                padding-left: .5rem;
-                text-align: left;
-                padding-left: 25px;
-                 a {
-            
-                        min-width: 100%;
-                    
-                    
-                }
+        .scroll-area {
+            overflow-y: scroll;
+            height: 95%;
+            &::-webkit-scrollbar {
+                width: 2px;
             }
-            .table-name:hover{
-                border-radius: 5px ;
-                color: white;
-                background-color: #4c5051;
+        
+            &::-webkit-scrollbar-track {
+                background: #000000;
             }
-
-            th {
-                border: 0.5px solid white;
-                padding: 5px;
-                color: #6e7b91;
+            &::-webkit-scrollbar-thumb {
+                background: #7b8184;
+            }
+            .item-container {
+               
+                // outline: 1px solid gold;
+                width: 95%;
+           
+                margin: 1rem auto;
+                line-height: 2rem;
+                .table-name {
+                    //   width: 370px;
+                    text-align: left;
                 
-            }
-    
-            td {
-               color: rgba(235, 235, 235, 0.699);
-               border: 0.5px solid white;
-               text-align: center;
-               font-weight: 100;
-               cursor: pointer;
-               a {
-                 text-decoration: none;
-                 color: inherit;
+                    a {
+                        padding-left:20px;
+                       font-weight: 300;
+                        min-width: 100px;
+                    }
 
-                 a:hover {
-                        color: #2bab52;
-                 }
-  
                 }
 
-            }
+                .table-name:hover {
+                    border-radius: 5px;
+                    color: white;
+                    background-color: #4c5051;
+                }
 
 
+
+                th {
+                    border: 0.5px solid white;
+                    padding: 5px;
+                    color: #6e7b91;
+
+                }
+
+                td {
+                    color: rgba(235, 235, 235, 0.699);
+                    border: 0.5px solid white;
+                    text-align: center;
+                    font-weight: 100;
+                    cursor: pointer;
+
+                    a {
+                        text-decoration: none;
+                        color: inherit;
+
+                        a:hover {
+                            color: #2bab52;
+                        }
+
+                    }
+
+                }
+
+
+            }            
         }
-}
+
+    }
 }
 
 
 .show-content-container {
-    height: 70%; 
-    width:100%;
-    background-color: #262830;
-    border-radius: 20px;  
-    box-shadow: 0 0 15px #515455;
+    // height: 70vh; 
+    width: 80%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    // background-color: #262830;
+    // border-radius: 20px;
+    // box-shadow: 0 0 15px #515455;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    position: relative;
+
+
     img {
         max-width: 350px;
         max-height: 400px;
         object-fit: cover;
 
     }
-    div{
+
+    div {
         display: flex;
         flex-direction: column;
         align-items: flex-start;
@@ -270,13 +260,15 @@ body{
         padding: 2rem 0 0 3rem;
 
     }
+
     .a-side {
-        span{
+        span {
             width: 100%;
             background-color: #65656525;
             color: rgba(255, 255, 255, 0.688);
             padding: 2px 10px;
         }
+
         .buttons-container {
             width: 100%;
             padding: 0;
@@ -285,20 +277,23 @@ body{
             display: flex;
             flex-direction: row;
             justify-content: space-between;
+
             button {
 
-                @include button-style(); 
+                @include button-style();
+
                 span {
                     background-color: transparent;
                 }
-         }
+            }
         }
 
     }
+
     .b-side {
         align-items: center;
         justify-content: space-between;
-       
+
 
     }
 
@@ -306,9 +301,10 @@ body{
         #delete {
             @include button-style();
             color: rgba(255, 0, 0, 0.899);
-            border:2px solid red;
+            border: 2px solid red;
             margin-bottom: 1rem;
         }
+
         #delete:hover {
             background-color: red;
             color: white;
@@ -320,7 +316,7 @@ body{
         position: absolute;
         width: 50%;
         min-height: 75%;
-        background-color:#262830;
+        background-color: #262830;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -328,10 +324,13 @@ body{
         gap: 1.5rem;
         font-size: 1.2rem;
         padding: 5rem;
-        input, textarea {
+
+        input,
+        textarea {
             padding: 5px 10px;
             width: 100%;
         }
+
         button {
             @include button-style();
         }
@@ -341,15 +340,17 @@ body{
 .qty-container::-webkit-scrollbar {
     width: 4px;
     height: 0px;
-  }
-  .qty-container::-webkit-scrollbar-track {
+}
+
+.qty-container::-webkit-scrollbar-track {
     background: #f1f1f100;
-  }
-  .qty-container::-webkit-scrollbar-thumb {
+}
+
+.qty-container::-webkit-scrollbar-thumb {
     background: #888;
-  }
- 
-  .about {
+}
+
+.about {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -359,28 +360,31 @@ body{
     margin: 10% auto;
     gap: 3rem;
     color: #478397;
+
     h1 {
-        color:#2bab52;
+        color: #2bab52;
     }
+
     div {
         display: flex;
         gap: 1rem;
 
-        a{
+        a {
             text-decoration: none;
             color: rgb(143, 140, 140);
 
         }
-        a:hover{
+
+        a:hover {
             color: white;
         }
     }
-  }
+}
 
-  @media (max-width: 800px) {
+@media (max-width: 800px) {
 
     .App {
-    
+
         width: 100vw;
         height: auto;
         display: flex;
@@ -394,6 +398,7 @@ body{
             flex-direction: column;
             justify-content: space-evenly;
         }
+
         .mobile-header {
             height: 25vh;
             width: 100vw;
@@ -406,20 +411,22 @@ body{
                 color: #7b8184;
                 font-size: 3rem;
             }
+
             button {
                 position: absolute;
-                top:3%;
-                left:3%;
+                top: 3%;
+                left: 3%;
                 z-index: 11111;
                 @include button-style();
                 font-size: 2rem;
                 padding: 0;
                 width: 4rem;
                 background-color: transparent;
-                
+
             }
         }
-            .preview {
+
+        .preview {
             min-height: 20vh;
             max-height: auto;
 
@@ -430,7 +437,8 @@ body{
                 width: 100%;
                 min-height: 100%;
                 margin: 1rem auto;
-                form{
+
+                form {
                     position: absolute;
                     display: flex;
                     flex-direction: column;
@@ -440,47 +448,53 @@ body{
                     padding: 0;
                     width: 95%;
                     min-height: 70vh;
-                    
+
                     text-align: center;
                     height: fit-content;
-                    div{
+
+                    div {
                         gap: 2rem;
                     }
-                }  
-        }
-        #form-toggle-btn{
-            right: 5%;
-            top:25vh;
+                }
+            }
+
+            #form-toggle-btn {
+                right: 5%;
+                top: 25vh;
+            }
+
         }
 
-    }
-    .content-container{
-        .item-container{
-            #department {
-                display: none;
+        .content-container {
+            .item-container {
+                #department {
+                    display: none;
+                }
             }
         }
-    }
 
     }
+
     .show-content-container {
-        
+
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
         position: relative;
         min-height: 100vh;
-        
+
         img {
             max-width: 250px;
             max-height: 300px;
 
         }
-        div{
+
+        div {
             padding: 2rem 1rem;
-    
+
         }
+
         .update-form {
             position: absolute;
             width: 95%;
@@ -490,10 +504,11 @@ body{
             padding: 2rem 0 1rem 0;
         }
     }
+
     .about {
         max-width: 95%;
         line-height: 2rem;
         font-size: 1.1rem;
         margin: 0 auto;
     }
-  }
+}

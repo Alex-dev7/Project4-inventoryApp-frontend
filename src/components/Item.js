@@ -7,6 +7,7 @@ const Item = ({item}) => {
    
             <tr >
                 <td >{item.id.substring(0, 4)}</td>
+                
                 <td className="table-name">
                     <Link to={`/item/${item.id}`}>
                          {item.name}
