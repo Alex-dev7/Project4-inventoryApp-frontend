@@ -1,7 +1,6 @@
 import './App.scss'
 import { Outlet } from 'react-router-dom';
 import Sidebar from './components/Sidebar';
-// import Preview from './components/Preview';
 import { useState } from 'react';
 
 
@@ -29,8 +28,6 @@ function App() {
     <div className="App">
         <Sidebar getWordFunc={getWordFunc}/>
         <div className='content-wrapper'>
-          {/* <Preview /> */}
-          
           <Outlet/>
         </div>
 

@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom"
 import CreateForm from "./CreateForm"
 import { useState } from "react"
 
@@ -18,14 +19,17 @@ function Preview({items}){
         { toggle ?  <CreateForm /> : (
           <div className="qty-container">
             
-            {items.filter(i => i.quantity <= 3).map((item) => ( <>
-            <div>
-                <img src={item.image} alt={item.name} />
-                <p key={item.id}>{item.name}:</p>
-                <span style={{"color": "green"}}>restock - only {item.quantity} left</span>
-            </div>
-
-            </>
+            {items.filter(i => i.quantity <= 3).map((item, index) => ( 
+            <Link key={index} to={`/item/${item.id}`}>
+                <div>         
+                      <img src={item.image} alt={item.name} />
+                      <div className="text-container">
+                        <p key={item.id}>{item.name}:</p>
+                        <span style={{"color": "orange"}}>restock -  {item.quantity}  left</span>                  
+                      </div>
+                </div>
+            </Link>
+            
             ))}
           </div>
         )

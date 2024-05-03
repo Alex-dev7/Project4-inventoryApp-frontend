@@ -1,6 +1,8 @@
 import { Link, useLoaderData, Form } from "react-router-dom"  
 import { useState } from "react"
 import placeholderImage from'./tool-kit.png'
+
+
 const ShowItem = () => {
     const item = useLoaderData()
 
