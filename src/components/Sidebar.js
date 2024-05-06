@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
 import './dashboard.scss';
-import { useState, useRef } from "react";
+import { useState } from "react";
 
 function Sidebar({getWordFunc}){
 
     const [toggle, setToggle] = useState(false)
-    const myRef = useRef(null)
+   
    
 
     function handleClick(e) {
