@@ -24,7 +24,7 @@ function Sidebar({getWordFunc}){
 
     return (
         <>
-            <section style={sidebarStyle}  className="sidebar">
+            <section style={window.innerWidth < 800 ? sidebarStyle : null}  className="sidebar">
                 <Link className="logo-container" to="/">
                     <p className='text-logo'>SupplySmart</p>
                 </Link>
