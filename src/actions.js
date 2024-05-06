@@ -1,6 +1,6 @@
 import { redirect } from "react-router-dom"
 
-const URL = "https://inventory-api-92cp.onrender.com"
+const URL = "https://inventory-app-api-kcu9.onrender.com"
 
 
 export const createAction = async ({request}) => {
